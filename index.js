@@ -19,6 +19,7 @@ app.post('/courses',(req, res)=>{
     }
     courses.push(course);
     console.log(courses);
+    res.send(course);
 })
 
 app.put('/courses/:id', (req, res)=>{
@@ -35,6 +36,7 @@ app.delete('/courses/:id', (req, res)=>{
     const course = courses.find(c => c.id === id);
     courses.splice(course.id-1, 1);
     console.log(courses)
+    res.send(course);
 })
 
 app.listen(3000, 'localhost', ()=>{
